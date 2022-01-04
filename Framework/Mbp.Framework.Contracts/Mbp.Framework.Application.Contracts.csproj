@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Mbp.Framework.Application.Contracts</PackageId>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>1.0.0</Version>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageOutputPath>../../nupkg</PackageOutputPath>
+		<Title>Mbp.Framework.Application.Contracts模块</Title>
+		<Authors>Mbp</Authors>
+		<Description>Mbp.Framework.Application.Contracts是脚手架的应用防腐层，提供了外界访问的对象和接口定义.</Description>
+		<PackageTags>Mbp;Application;Framework</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\Mbp.Core\Mbp.Core.csproj" />
+		<ProjectReference Include="..\..\src\Mbp.Ddd\Mbp.Ddd.csproj" />
+		<ProjectReference Include="..\Mbp.Framework.Domain.Share\Mbp.Framework.Domain.Share.csproj" />
+	</ItemGroup>
+
+</Project>

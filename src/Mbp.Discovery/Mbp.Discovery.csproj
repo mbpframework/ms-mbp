@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Mbp.Discovery</PackageId>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>1.0.0</Version>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageOutputPath>../../nupkg</PackageOutputPath>
+		<Title>Mbp.Discovery模块</Title>
+		<Authors>Mbp</Authors>
+		<Description>Mbp.Discovery为框架提供了服务发现功能.</Description>
+		<PackageTags>Mbp;Application;Module</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="NgAutoDiscoveryService.cs" />
+	  <Compile Remove="Mbp\Discovery\DiscoveryFactory.cs" />
+	  <Compile Remove="Mbp\Discovery\LoadBalancer\LoadBalanceFactory.cs" />
+	  <Compile Remove="Mbp\Discovery\ServiceDiscoveryProvider\DiscoveryProviderFactory.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Consul" Version="1.6.1.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Mbp.Caching\Mbp.Caching.csproj" />
+		<ProjectReference Include="..\Mbp.AspNetCore\Mbp.AspNetCore.csproj" />
+		<ProjectReference Include="..\Mbp.Core\Mbp.Core.csproj" />
+	</ItemGroup>
+
+</Project>

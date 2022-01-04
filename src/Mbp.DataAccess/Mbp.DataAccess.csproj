@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Mbp.DataAccess</PackageId>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>1.0.0</Version>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageOutputPath>../../nupkg</PackageOutputPath>
+		<Title>Mbp.Orm模块</Title>
+		<Authors>Mbp</Authors>
+		<Description>Mbp.Orm封装了数据库访问的Orm框架，主要提供EF CORE和Dapper两种方式.</Description>
+		<PackageTags>Mbp;Application;Module</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Mbp\Orm\Dapper\**" />
+		<EmbeddedResource Remove="Mbp\Orm\Dapper\**" />
+		<None Remove="Mbp\Orm\Dapper\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Dapper" Version="2.0.78" />
+		<PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.2" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
+		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.2" />
+		<PackageReference Include="Oracle.EntityFrameworkCore" Version="3.19.80" />
+		<PackageReference Include="System.DirectoryServices.Protocols" Version="4.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Mbp.Core\Mbp.Core.csproj" />
+		<ProjectReference Include="..\Mbp.Ddd\Mbp.Ddd.csproj" />
+	</ItemGroup>
+
+</Project>

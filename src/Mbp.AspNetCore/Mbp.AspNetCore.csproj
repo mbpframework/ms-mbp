@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Mbp.Components</PackageId>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>1.0.0</Version>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageOutputPath>../../nupkg</PackageOutputPath>
+		<Title>Mbp.Components模块（Mbp核心模块之一）</Title>
+		<Authors>Mbp</Authors>
+		<Description>Mbp.Components主要提供框架运行时的核心能力包括缓存，配置，日志，事件总线，工具方法，扩展方法等.</Description>
+		<PackageTags>Mbp;Components;Module</PackageTags>
+		<Nullable>disable</Nullable>
+		<SonarQubeExclude>True</SonarQubeExclude>
+	</PropertyGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="System.Drawing.Common" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.1.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.7" />
+		<PackageReference Include="DotNetCore.CAP" Version="3.1.1" />
+		<PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="3.1.8" />
+		<PackageReference Include="DotNetCore.CAP" Version="3.1.1" />
+		<PackageReference Include="DotNetCore.CAP.InMemoryStorage" Version="3.1.1" />
+		<PackageReference Include="DotNetCore.CAP.RabbitMQ" Version="3.1.1" />
+		<PackageReference Include="MongoDB.Bson" Version="2.11.4" />
+		<PackageReference Include="MongoDB.Driver" Version="2.11.4" />
+		<PackageReference Include="MySqlConnector" Version="0.69.9" />
+		<PackageReference Include="Savorboard.CAP.InMemoryMessageQueue" Version="3.0.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+		<PackageReference Include="Serilog.Sinks.Exceptionless" Version="3.1.2" />
+		<PackageReference Include="MediatR" Version="9.0.0" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+		<PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Mbp.Core\Mbp.Core.csproj" />
+	</ItemGroup>
+
+</Project>

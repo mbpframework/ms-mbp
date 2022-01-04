@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Mbp.Ddd</PackageId>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>1.0.0</Version>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageOutputPath>../../nupkg</PackageOutputPath>
+		<Title>Mbp.Ddd模块</Title>
+		<Authors>Mbp</Authors>
+		<Description>Mbp.Ddd主要提供了一个以DDD领域驱动方式设计的软件开发模型.</Description>
+		<PackageTags>Mbp;Application;Module</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Mbp\Ddd\Domain\Repository\IDapperRepository.cs" />
+	  <Compile Remove="Mbp\Ddd\Domain\Repository\ISeqencingRepository.cs" />
+	  <Compile Remove="Mbp\Ddd\Domain\Repository\IShardingRepository.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="10.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Mbp.AspNetCore\Mbp.AspNetCore.csproj" />
+		<ProjectReference Include="..\Mbp.Core\Mbp.Core.csproj" />
+	</ItemGroup>
+
+</Project>

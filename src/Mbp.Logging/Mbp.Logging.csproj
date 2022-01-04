@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.7" />
+		<PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+		<PackageReference Include="Serilog.Sinks.Exceptionless" Version="3.1.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Mbp.AspNetCore\Mbp.AspNetCore.csproj" />
+		<ProjectReference Include="..\Mbp.Core\Mbp.Core.csproj" />
+	</ItemGroup>
+
+</Project>

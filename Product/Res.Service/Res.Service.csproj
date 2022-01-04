@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<AssemblyName>Res.Service</AssemblyName>
+		<RootNamespace>Res.Service</RootNamespace>
+		<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Protobuf Include="Protos\Client\greet.proto" GrpcServices="Client" />
+		<Protobuf Include="Protos\Service\greet.proto" GrpcServices="Server" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Res.Business\Res.Business.csproj" />
+		<ProjectReference Include="..\Res.DataAccess\Res.DataAccess.csproj" />
+		<PackageReference Include="Grpc.Tools" Version="2.34.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,102 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<PackageId>Mbp.Framework.Web</PackageId>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>1.0.0</Version>
+		<ApplicationIcon>app.ico</ApplicationIcon>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageOutputPath>../../nupkg</PackageOutputPath>
+		<Title>Mbp.Framework.Web模块</Title>
+		<Authors>Mbp</Authors>
+		<Description>Mbp.Framework.Web是脚手架的启动入口，负责启动Mbp运行时和加载业务产品模块.</Description>
+		<PackageTags>Mbp;Application;Framework</PackageTags>
+		<UserSecretsId>6205e86a-4614-4086-a2a9-b4fc3124a2fc</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>..\..</DockerfileContext>
+		<Nullable>annotations</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="logs\**" />
+		<Content Remove="logs\**" />
+		<EmbeddedResource Remove="logs\**" />
+		<None Remove="logs\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<Protobuf Include="Protos\Client\greet.proto" GrpcServices="Client" />
+		<Protobuf Include="Protos\Service\greet.proto" GrpcServices="Server" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Remove="CustomizeHeaderParameterFilter.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AspNetCore.HealthChecks" Version="1.0.0" />
+		<PackageReference Include="Autofac" Version="5.2.0" />
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+		<PackageReference Include="Autofac.Extras.DynamicProxy" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="3.1.15" />
+		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="5.0.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+		<PackageReference Include="Serilog" Version="2.10.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+		<PackageReference Include="Serilog.Sinks.Async" Version="1.4.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+		<PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+		<PackageReference Include="SkyAPM.Agent.AspNetCore" Version="1.1.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\Mbp.Config\Mbp.Config.Apollo.csproj" />
+		<ProjectReference Include="..\..\src\Mbp.DataAccess\Mbp.DataAccess.csproj" />
+		<ProjectReference Include="..\..\src\Mbp.Ddd\Mbp.Ddd.csproj" />
+		<ProjectReference Include="..\..\src\Mbp.Discovery\Mbp.Discovery.csproj" />
+		<ProjectReference Include="..\..\src\Mbp.Net\Mbp.Net.csproj" />
+		<ProjectReference Include="..\..\src\Mbp.Core\Mbp.Core.csproj" />
+		<ProjectReference Include="..\..\src\Mbp.WebHost\Mbp.WebHost.csproj" />
+		<ProjectReference Include="..\Mbp.Framework.Application\Mbp.Framework.Application.csproj" />
+		<PackageReference Include="Grpc.Tools" Version="2.34.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Update="appsettings_normal.Development.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="appsettings_normal.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="wwwroot\Mbp.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="FileRoot\ReadMe.txt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Protos\Client\greet.proto">
+			<GrpcServices>Client</GrpcServices>
+		</None>
+		<None Update="Protos\Service\greet.proto">
+			<GrpcServices>Server</GrpcServices>
+		</None>
+	</ItemGroup>
+
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties appsettings_1json__JsonSchema="" />
+		</VisualStudio>
+	</ProjectExtensions>
+
+
+</Project>

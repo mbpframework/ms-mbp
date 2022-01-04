@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Mbp.Framework.Application</PackageId>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>1.0.0</Version>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageOutputPath>../../nupkg</PackageOutputPath>
+		<Title>Mbp.Framework.Application模块</Title>
+		<Authors>Mbp</Authors>
+		<Description>Mbp.Framework.Application是脚手架的应用层，提供了WebAPI的应用服务.</Description>
+		<PackageTags>Mbp;Application;Framework</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\Mbp.Ddd\Mbp.Ddd.csproj" />
+		<ProjectReference Include="..\..\src\Mbp.EventBus\Mbp.EventBus.csproj" />
+		<ProjectReference Include="..\..\src\Mbp.Net\Mbp.Net.csproj" />
+		<ProjectReference Include="..\..\src\Mbp.AspNetCore\Mbp.AspNetCore.csproj" />
+		<ProjectReference Include="..\Mbp.Framework.Contracts\Mbp.Framework.Application.Contracts.csproj" />
+		<ProjectReference Include="..\Mbp.Framework.Domain\Mbp.Framework.Domain.csproj" />
+	</ItemGroup>
+
+</Project>

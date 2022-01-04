@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>WuhanIns.Nitrogen.BackgroundJob</PackageId>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<Version>1.0.0</Version>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageOutputPath>../../nupkg</PackageOutputPath>
+		<Title>Nitrogen.BackgroundJob模块</Title>
+		<Authors>Ins.Nitrogen</Authors>
+		<Description>Nitrogen.BackgroundJob为框架提供了后台作业的能力.</Description>
+		<PackageTags>Nitrogen;Application;Module</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Hangfire" Version="1.7.12" />
+		<PackageReference Include="Hangfire.Mongo" Version="0.7.12" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\WuhanIns.Nitrogen.Components\WuhanIns.Nitrogen.Components.csproj" />
+		<ProjectReference Include="..\WuhanIns.Nitrogen.Core\WuhanIns.Nitrogen.Core.csproj" />
+	</ItemGroup>
+
+</Project>

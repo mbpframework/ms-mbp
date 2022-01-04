@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Mbp.Framework.DataAccess</PackageId>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<Version>1.0.0</Version>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageOutputPath>../../nupkg</PackageOutputPath>
+		<Title>Mbp.Framework.DataAccess模块</Title>
+		<Authors>Ins.Mbp</Authors>
+		<Description>Mbp.Framework.DataAccess是脚手架的数据访问层，这层提供了多数据库访问，不同版本数据库连接的切换能力.</Description>
+		<PackageTags>Mbp;Application;Framework</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
+		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.2" />
+		<PackageReference Include="Oracle.EntityFrameworkCore" Version="3.19.80" />
+		<PackageReference Include="System.DirectoryServices.Protocols" Version="4.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\Mbp.Core\Mbp.Core.csproj" />
+		<ProjectReference Include="..\..\src\Mbp.DataAccess\Mbp.DataAccess.csproj" />
+	</ItemGroup>
+
+</Project>

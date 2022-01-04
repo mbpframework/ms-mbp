@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Mbp.Core</PackageId>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>1.0.0</Version>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageOutputPath>../../nupkg</PackageOutputPath>
+		<Title>Mbp.Core模块（Mbp核心模块之一）</Title>
+		<Authors>Mbp</Authors>
+		<Description>Mbp.Core主要构建一个以模块化方式运行的运行时，它定义了系统核心的抽象及模块的运行机制.</Description>
+		<PackageTags>Mbp;Core;Module</PackageTags>
+		<Nullable>disable</Nullable>
+		<SonarQubeExclude>True</SonarQubeExclude>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+		<DocumentationFile></DocumentationFile>
+		<WarningsAsErrors></WarningsAsErrors>
+		<NoWarn>;1701;1702;1705;1591;CS1591;NU5105;RS0041;</NoWarn>
+		<WarningLevel>2</WarningLevel>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.7" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="3.1.7" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.7" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.7" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.7" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.7" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.7" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="3.1.7" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.7" />
+		<PackageReference Include="System.Drawing.Common" Version="5.0.0" />
+		<PackageReference Include="System.Linq" Version="4.3.0" />
+		<PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
+		<PackageReference Include="System.Runtime" Version="4.3.1" />
+		<PackageReference Include="System.Runtime.Extensions" Version="4.3.1" />
+	</ItemGroup>
+</Project>
