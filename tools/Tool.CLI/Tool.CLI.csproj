@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageType>Template</PackageType>
+		<PackageId>MSMpb.Template.WEBAPI</PackageId>
+		<Title>ms-mbp框架后端开发脚手架</Title>
+		<Authors>mbpframework</Authors>
+		<Description>构建ms-mbp微服务.</Description>
+		<PackageTags>dotnet-new;templates;ms-mbp</PackageTags>
+		<TargetFramework>net6.0</TargetFramework>
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<ContentTargetFolders>content</ContentTargetFolders>
+		<Version>1.0.0</Version>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+		<Compile Remove="**\*" />
+		<Compile Remove="templates\Ins.Sample\**" />
+		<Content Remove="templates\Ins.Sample\**" />
+		<EmbeddedResource Remove="templates\Ins.Sample\**" />
+		<None Remove="templates\Ins.Sample\**" />
+	</ItemGroup>
+
+</Project>

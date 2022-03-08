@@ -35,6 +35,12 @@
 	<ItemGroup>
 		<Compile Remove="CustomizeHeaderParameterFilter.cs" />
 	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="index.html" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="index.html" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="AspNetCore.HealthChecks" Version="1.0.0" />
@@ -60,7 +66,6 @@
 		<ProjectReference Include="..\..\src\Mbp.Discovery\Mbp.Discovery.csproj" />
 		<ProjectReference Include="..\..\src\Mbp.Net\Mbp.Net.csproj" />
 		<ProjectReference Include="..\..\src\Mbp.Core\Mbp.Core.csproj" />
-		<ProjectReference Include="..\..\src\Mbp.WebHost\Mbp.WebHost.csproj" />
 		<ProjectReference Include="..\Mbp.Framework.Application\Mbp.Framework.Application.csproj" />
 		<PackageReference Include="Grpc.Tools" Version="2.34.0">
 			<PrivateAssets>all</PrivateAssets>

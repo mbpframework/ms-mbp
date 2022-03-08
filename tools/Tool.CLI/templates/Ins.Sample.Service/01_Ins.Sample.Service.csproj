@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<AssemblyName>Ins.Sample.Service</AssemblyName>
+		<RootNamespace>Ins.Sample.Service</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Protobuf Include="Protos\Client\greet.proto" GrpcServices="Client" />
+		<Protobuf Include="Protos\Service\greet.proto" GrpcServices="Server" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Ins.Sample.Business\02_Ins.Sample.Business.csproj" />
+		<ProjectReference Include="..\Ins.Sample.DataAccess\03_Ins.Sample.DataAccess.csproj" />
+		<PackageReference Include="Grpc.Tools" Version="2.34.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+</Project>

@@ -1,8 +1,16 @@
-﻿using Mbp.Ddd.Application.ObjectMapper.AutoMapper;
+﻿using Mbp.AspNetCore;
+using Mbp.Caching;
+using Mbp.Config.Apollo;
+using Mbp.DataAccess;
+using Mbp.Ddd;
+using Mbp.Ddd.Application.ObjectMapper.AutoMapper;
+using Mbp.Discovery;
 using Mbp.Framework.Application;
 using Mbp.Framework.Web.GrpcClient;
+using Mbp.Logging;
 using Mbp.Modular;
-using Mbp.WebHost;
+using Mbp.Net;
+using Mbp.Framework.Web;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,7 +19,16 @@ namespace Mbp.Framework.Web
     /// <summary>
     /// Mbp平台启动模块
     /// </summary>
-    [DependsOn(typeof(MbpFrameworkApplicationModule),typeof(MbpWebHostModule))]
+    [DependsOn(typeof(MbpFrameworkApplicationModule), typeof(MbpAspNetModule), 
+        typeof(MbpCachingModule),
+        typeof(MbpApolloModule),
+        typeof(MbpDddModule),
+        typeof(MbpDiscoveryModule),
+        typeof(MbpLoggerModule),
+        typeof(MbpNetModule),
+        typeof(MbpDataAccessModule),
+        typeof(MbpWebModule)
+        )]
     public class MbpFrameworkWebModule : MbpModule
     {
         /// <summary>

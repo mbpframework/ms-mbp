@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "mbpframework",
+  "classifications": [ "Web", "WebAPI" ],
+  "identity": "MSMpb.Template.WEBAPI",
+  "name": "MS-Mbp Framework For WebApi",
+  "shortName": "mbpapi",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "Sample",
+  "preferNameDirectory": true
+}

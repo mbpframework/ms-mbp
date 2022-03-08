@@ -13,12 +13,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Mbp\Ddd\Domain\Repository\IDapperRepository.cs" />
-	  <Compile Remove="Mbp\Ddd\Domain\Repository\ISeqencingRepository.cs" />
-	  <Compile Remove="Mbp\Ddd\Domain\Repository\IShardingRepository.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="10.0.0" />
 	</ItemGroup>
 

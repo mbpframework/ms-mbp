@@ -13,14 +13,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Compile Remove="Mbp\Orm\Dapper\**" />
-		<EmbeddedResource Remove="Mbp\Orm\Dapper\**" />
-		<None Remove="Mbp\Orm\Dapper\**" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Dapper" Version="2.0.78" />
-		<PackageReference Include="Dapper.Contrib" Version="2.0.78" />
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.2" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />

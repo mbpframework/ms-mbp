@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Ins.Sample.Business</AssemblyName>
+    <RootNamespace>Ins.Sample.Business</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Bo\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WuhanIns.Nitrogen.Framework.Application" Version="1.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ins.Sample.DataAccess\03_Ins.Sample.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

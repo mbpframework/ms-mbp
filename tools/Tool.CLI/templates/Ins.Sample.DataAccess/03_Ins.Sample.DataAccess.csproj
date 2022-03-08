@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<AssemblyName>Ins.Sample.DataAccess</AssemblyName>
+		<RootNamespace>Ins.Sample.DataAccess</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="WuhanIns.Nitrogen.Framework.DataAccess" Version="1.0.0" />
+	</ItemGroup>
+
+</Project>

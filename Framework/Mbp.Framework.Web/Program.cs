@@ -1,4 +1,4 @@
-using Mbp.WebHost;
+using Mbp.Framework.Web;
 using Serilog;
 using System;
 using System.Threading.Tasks;
