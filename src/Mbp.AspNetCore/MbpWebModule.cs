@@ -75,6 +75,9 @@ namespace Mbp.AspNetCore
                 // 请求响应统一格式处理中间件
                 options.Filters.Add(typeof(ResponseMiddlewareAttribute));
 
+                // 设置内容协议
+                options.ReturnHttpNotAcceptable = true;
+
             })
             // 注册到容器中，并在staup时候替换到autofac中
             .AddControllersAsServices();
