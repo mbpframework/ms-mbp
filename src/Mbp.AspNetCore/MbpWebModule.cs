@@ -85,6 +85,8 @@ namespace Mbp.AspNetCore
             // 配置应用程序模型约定
             ConfigApplicaitonModel(services, new MbpApiOptions());
 
+            services.AddControllers().AddControllersAsServices();
+
             // 开启响应压缩
             services.AddResponseCompression(options =>
             {
