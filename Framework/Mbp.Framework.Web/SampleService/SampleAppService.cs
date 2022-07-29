@@ -24,6 +24,8 @@ namespace Mbp.Framework.Web.SampleService
 
         private readonly INgRepository<OracleEntity, DefaultDbContext, string> _ngOracleEntityRepository = null;
 
+        private readonly DefaultDbContext _defaultDbContext;
+
         /// <summary>
         /// 依赖注入
         /// </summary>
@@ -32,18 +34,35 @@ namespace Mbp.Framework.Web.SampleService
         public SampleAppService(IOptions<ProductConfig> options,
             INgObjectMapper<MbpFrameworkWebModule> objectMapper,
             INgRepository<SampleEntity, DefaultDbContext, string> ngUserRepository,
-            INgRepository<OracleEntity, DefaultDbContext, string> ngOracleEntityRepository)
+            INgRepository<OracleEntity, DefaultDbContext, string> ngOracleEntityRepository,
+            DefaultDbContext defaultDbContext)
         {
             _options = options;
             _objectMapper = objectMapper;
             _ngUserRepository = ngUserRepository;
             _ngOracleEntityRepository = ngOracleEntityRepository;
+            _defaultDbContext = defaultDbContext;
         }
 
         [HttpGet("GetBlogs/{id}")]
         public virtual string GetBlogs(int id)
         {
             return $"GetBlogs:{id}-----{_options.Value.ProductName}";
+        }
+
+        [HttpPost("TestEF")]
+        public virtual void TestEF(SampleInputDto userDto)
+        {
+            var entity = _objectMapper.Map<SampleInputDto, SampleEntity>(userDto);
+            entity.ID = "first";
+            entity.NAME = "第一个";
+            _defaultDbContext.SampleEntities.Add(entity);
+            _defaultDbContext.SaveChanges();
+
+            entity.ID = "second";
+            entity.NAME = "第二个";
+            _defaultDbContext.SampleEntities.Add(entity);
+            _defaultDbContext.SaveChanges();
         }
 
         [HttpPost("AddUser")]
